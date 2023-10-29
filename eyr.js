@@ -1,0 +1,2 @@
+var buyerOrSeller;
+var
