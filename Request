@@ -1,0 +1,72 @@
+Estimate Your Rebate
+2 radials: 1 that says Buyer and one that says Seller
+The input box below the radial becomes available, and says Purchase Price or Selling Price
+under the input box depending on the radial that was selected.
+A slide bar that has Commission Rate under it, and is adjustable from 3-10%
+A display that gives an Estimated Rebate
+
+Rebate Math (that happens in the background)
+Purchase Price * Commission Rate = Gross Commission Income (GCI)
+GCI – 7% (Franchise Fee) = Brokerage Split
+Brokerage Split – 5% = Net Income
+Net Income * 40% = Estimated Rebate
+(Being able to adjust settings/change the brokerage split % would be useful if I decide use a different
+commission schedule)
+
+A check box with a popup question after the Estimated Rebate “Would you like to donate a portion this
+rebate?”
+If they check the box, another display pops up showing “Estimated Rebate” &amp; “Estimated Donation”
+Estimated Rebate = Net Income * 25%
+Estimated Donation = Net Income * 15*
+
+After they input the data (Purchase Price and Commission Rate), a pie chart fills in on the right-hand side
+of the “Calculator”.
+Its title being “Where Commission Goes” and Labels being:
+Franchise Fee (Pie portion visible, but the dollar amount and % not being displayed)
+Brokerage Split (Pie portion visible, but the dollar amount and % not being displayed)
+Agent Commission (Pie Portion visible and dollar amount displayed)
+Estimated Rebate (Pie Portion visible and dollar amount displayed)
+
+Having a compare function where you have two calculators and pie charts visible to make adjustments
+and comparisons would be nice.
+
+The 2 nd /3 rd Pie chart (depending on the donation check box/comparison option) would have one
+additional section:
+Estimated Donation (Pie Portion visible and dollar amount displayed)
+
+Referral Rebate (If I cannot work with the client and have to refer them calculator)
+2 radials: 1 that says Buyer and one that says Seller
+The input box below the radial becomes available, and says Purchase Price or Selling Price
+under the input box depending on the radial that was selected.
+A slide bar that has Commission Rate under it, and is adjustable from 3-10%
+A display that gives an Estimated Referral Rebate
+
+Rebate Math (that happens in the background)
+Purchase Price * Commission Rate = Gross Commission Income (GCI)
+GCI – 7% (Franchise Fee) = GCI Reduced Franchise Fee
+GCI Reduced Franchise Fee * 25% = Referral Commission
+Referral Commission – 5% = Net Income
+Net Income * 100% = Estimated Referral Rebate
+(Being able to adjust settings/change the brokerage split % would be useful if I decide use a different
+commission schedule)
+
+A check box with a popup question after the Estimated Referral Rebate “Would you like to donate this
+rebate?”
+If they check the box, another display pops up showing “Estimated Donation”
+Estimated Donation = Estimated Referral Rebate * 100%
+
+After they input the data (Purchase Price and Commission Rate), a pie chart fills in on the right-hand side
+of the “Calculator”.
+
+Its title being “Where Commission Goes” and Labels being:
+Franchise Fee (Pie portion visible, but the dollar amount and % not being displayed)
+Referring Brokerage Split (Pie portion visible, but the amount and % not being displayed)
+Referring Agents Commission / Estimated Referral Rebate (Pie Portion visible and dollar amount
+displayed)
+Agents Commission (Pie portion visible, but the amount and % not being displayed)
+Brokerage Split (Pie portion visible, but the amount and % not being displayed)
+The referree Agent/Broker split is unknow to me, however 60/40 is a good base line, and a blurb should
+be put in that it is just an estimate.
+
+Having a compare function where you have two calculators and pie charts visible to make adjustments
+and comparisons would be nice.
