@@ -12,10 +12,16 @@
 <body>
     <div id="eyr">
         <h1>EstimateYourRebate</h1>
-        <input type="radio" id="radBuyer" name="BuySellGroup" />
-        <label for="radBuyer">BUYER</label><br>
-        <input type="radio" id="radSeller" name="BuySellGroup" />
-        <label for="radSeller">SELLER</label><br>
+        <legend>Are you buying or selling?</legend>
+
+        <div>
+            <input type="radio" id="radBuyer" name="radBuySell" />
+            <label for="radBuyer">BUYER</label><br>
+        </div>
+        <div>
+            <input type="radio" id="radSeller" name="radBuySell" />
+            <label for="radSeller">SELLER</label><br>
+        </div>
         
         <input type="button" id="but" value="calculate" />
         <div id="res"></div>
