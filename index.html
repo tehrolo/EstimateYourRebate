@@ -12,19 +12,29 @@
 <body>
     <div id="eyr">
         <h1>EstimateYourRebate</h1>
-        <legend>Are you buying or selling?</legend>
+        <legend>Are you a buyer or seller?</legend>
 
         <div>
-            <input type="radio" id="radBuyer" name="radBuySell" />
             <label for="radBuyer">BUYER</label><br>
+            <input type="radio" id="radBuyer" name="radBuySell" />
         </div>
         <div>
-            <input type="radio" id="radSeller" name="radBuySell" />
             <label for="radSeller">SELLER</label><br>
+            <input type="radio" id="radSeller" name="radBuySell" />
         </div>
+        <br>
+
         
-        <input type="button" id="but" value="calculate" />
-        <div id="res"></div>
+        <div id="sell-price">
+            <h2>What is the buy/sell price?</h2>
+            <label tabindex="0" class="input-label prefix">
+                <span>$</span>
+            </label>
+            <input tabindex="0" type="number" placeholder="$100,000" id="buySellPrice"><br>
+        </div>
+        <h2>Select a commission rate. </h2>
+        
+
     </div>
 </body>
 </html>
