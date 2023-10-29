@@ -12,8 +12,11 @@
 <body>
     <div id="eyr">
         <h1>EstimateYourRebate</h1>
-        <label><input type="radio" id="radBuyer" name="Buyer" />Buyer<br></label>
-        <label><input type="radio" id="radSeller" name="Seller" />Seller<br></label>
+        <input type="radio" id="radBuyer" name="BuySellGroup" />
+        <label for="radBuyer">BUYER</label><br>
+        <input type="radio" id="radSeller" name="BuySellGroup" />
+        <label for="radSeller">SELLER</label><br>
+        
         <input type="button" id="but" value="calculate" />
         <div id="res"></div>
     </div>
