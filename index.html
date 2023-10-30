@@ -9,74 +9,78 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1>Estimate Your Rebate</h1>
-        <div class="radio-container">
-            <fieldset>
-                <!--<h2><label>Are you a buyer or seller?</label></h2>-->
-                <legend>Are you a buyer or seller?:</legend>
-                <div>
-                    <input type="radio" id="buyer" name="role" value="buyer"> Buyer
-                    <input type="radio" id="seller" name="role" value="seller"> Seller
-                </div>
-            </fieldset>
-        </div>
-        <br><br>
-        <div class="input-container">
-            <fieldset>
-                <legend>What is the buy/sell price?:</legend>
-                <div>
-                    <!--<h2><label for="dollarValue">What is the buy/sell price?:</label></h2>-->
-                    <span>$</span>
-                    <input tabindex="0" type="number" placeholder="100,000" id="buySellPrice">
-                </div>
-            </fieldset>
-        </div>
-        <br><br>
-        <div class="slider-container">
-            <fieldset>
-                <legend>Select a commission rate: </legend>
-                <div>
-                    <!--<h2><label for="slider">Select a commission rate:</label></h2>-->
-                    <span id="sliderValue">6</span>
-                    <span> %</span><br>
-                    <input type="range" id="slider" min="3" max="10" step="0.5" value="6">
-                </div>
-            </fieldset>
-        </div>
-        <br><br>
-        <div>
-            <fieldset>
-                <legend>Would you like to donate a portion this rebate?</legend>
-                <div>
-                    <input type="checkbox" id="donationCheckBox" name="donationCheckBox" />
-                    <label for="donation">Yes! Donate a portion of this rebate.</label>
-                </div>
-            </fieldset>
-        </div>
-    </div>
-    <br><br>
-    <div class="results">
-        <fieldset>
-            <legend>Results</legend>
-            <div>
-                <!--<h2><label></label></h2>-->
-                <span>Your Rebate: $</span>
-                <span id="yourRebateValue">0</span><br>
-                <span>Primary Fees: $</span>
-                <span id="primaryFeeValue">0</span><br>
-                <span>Secondary Fees: $</span>
-                <span id="secondaryFeeValue">0</span><br>
-                <span>Commission: $</span>
-                <span id="commissionValue">0</span><br>
-                <span>Donation: $</span>
-                <span id="donationValue">0</span><br>
-                <span>====================</span><br>
-                <span>Total: $</span>
-                <span id="totalValue">0</span><br>
+    <form id="entry">
+        <div class="container">
+            <h1>Estimate Your Rebate</h1>
+            <div class="radio-container">
+                <fieldset>
+                    <!--<h2><label>Are you a buyer or seller?</label></h2>-->
+                    <legend>Are you a buyer or seller?:</legend>
+                    <div>
+                        <input type="radio" id="buyer" name="role" value="buyer"> Buyer
+                        <input type="radio" id="seller" name="role" value="seller"> Seller
+                    </div>
+                </fieldset>
             </div>
-        </fieldset>
-    </div>
+            <br><br>
+            <div class="input-container">
+                <fieldset>
+                    <legend>What is the buy/sell price?:</legend>
+                    <div>
+                        <!--<h2><label for="dollarValue">What is the buy/sell price?:</label></h2>-->
+                        <span>$</span>
+                        <input tabindex="0" type="number" placeholder="100,000" id="buySellPrice">
+                    </div>
+                </fieldset>
+            </div>
+            <br><br>
+            <div class="slider-container">
+                <fieldset>
+                    <legend>Select a commission rate: </legend>
+                    <div>
+                        <!--<h2><label for="slider">Select a commission rate:</label></h2>-->
+                        <span id="sliderValue">6</span>
+                        <span> %</span><br>
+                        <input type="range" id="slider" min="3" max="10" step="0.5" value="6">
+                    </div>
+                </fieldset>
+            </div>
+            <br><br>
+            <div>
+                <fieldset>
+                    <legend>Would you like to donate a portion this rebate?</legend>
+                    <div>
+                        <input type="checkbox" id="donationCheckBox" name="donationCheckBox" />
+                        <label for="donation">Yes! Donate a portion of this rebate.</label>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </form>
+    <br><br>
+    <form id="results">
+        <div class="results">
+            <fieldset>
+                <legend>Results</legend>
+                <div>
+                    <!--<h2><label></label></h2>-->
+                    <span>Your Rebate: $</span>
+                    <span id="yourRebateValue">0</span><br>
+                    <span>Primary Fees: $</span>
+                    <span id="primaryFeeValue">0</span><br>
+                    <span>Secondary Fees: $</span>
+                    <span id="secondaryFeeValue">0</span><br>
+                    <span>Commission: $</span>
+                    <span id="commissionValue">0</span><br>
+                    <span>Donation: $</span>
+                    <span id="donationValue">0</span><br>
+                    <span>====================</span><br>
+                    <span>Total: $</span>
+                    <span id="totalValue">0</span><br>
+                </div>
+            </fieldset>
+        </div>
+    </form>
 
 
     <script>
