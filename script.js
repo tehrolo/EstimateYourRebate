@@ -36,8 +36,9 @@ function updateResults() {
     commissionValu.innerHTML = adjustedCommission.toFixed(2);
     donationValu.innerHTML = donationValue.toFixed(2);
     totalValu.innerHTML = total.toFixed(2);
-    yValues = [estimatedRebate.toFixed(2),brokerageSplit.toFixed(2),secondaryFee.toFixed(2),adjustedCommission.toFixed(2),donationValue.toFixed(2)];
-    updateChart(yValues)
+    yValues = [estimatedRebate.toFixed(0),brokerageSplit.toFixed(0),secondaryFee.toFixed(0),adjustedCommission.toFixed(0),donationValue.toFixed(0)];
+    myChart.data.datasets[0].data = yValues;
+    updateChart()
 };
 
 slider.addEventListener("input", function() {
@@ -83,8 +84,7 @@ const myChart = new Chart(ctx, {
 });
 
 // Function to update chart data
-function updateChart(x) {
+function updateChart() {
   // Update chart data and redraw
-  myChart.data.datasets[0].data = x;
   myChart.update();
 };
