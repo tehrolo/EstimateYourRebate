@@ -22,5 +22,5 @@ if(userDonate == True) {
 //update slider
 userDefCommRate.innerHTML = commissionRateSlider.value; // Display the default slider value
 commissionRateSlider.oninput = function() {
-  adjCommRate.innerHTML = this.value;
+  userDefCommRate.innerHTML = this.value;
 }
