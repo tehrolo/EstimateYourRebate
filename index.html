@@ -40,9 +40,19 @@
                 <h2>Select a commission rate. </h2>
                 <span>Current rate:</span>
                 <span id="adjCommRate">6.0</span><br>
-                <input type="range" step="0.5" min="3.0" max="10.0" value="6.0" class="slider" id="commisionRange"><br>
+                <input type="range" step="0.5" min="3.0" max="10.0" value="6.0" class="slider" id="commisionRangeSlider"><br>
                 <span tabindex="0" class="slider-minval">3</span>
                 <span tabindex="0" class="slider-maxval">10</span>
+                <script>
+                    var commissionRateSlider = document.getElementById("commisionRangeSlider");  //slider
+                    var userDefCommRate = document.getElementById("adjCommRate");
+
+                    //update slider
+                    userDefinedCommRate.innerHTML = commissionRateSlider.value; // Display the default slider value
+                    commissionRateSlider.oninput = function() {
+                      userDefinedCommRate.innerHTML = this.value;
+                    }
+                </script>
             </div>
         </slider>
     </div>
