@@ -29,6 +29,17 @@
             <span> %</span><br>
             <input type="range" id="slider" min="3" max="10" step="0.5" value="6">
         </div>
+
+        <div>
+            <fieldset>
+                <legend>Would you like to donate a portion this rebate?</legend>
+                <div>
+                    <input type="checkbox" id="donationCheckBox" name="donationCheckBox" />
+                    <label for="donation">Yes! Donate a portion of this rebate.</label>
+                </div>
+            </fieldset>
+
+        </div>
     </div>
     <div class="results">
         <h2><label>Results</label></h2>
@@ -40,12 +51,14 @@
         <span id="secondaryFeeValue">0</span><br>
         <span>My Commission: $</span>
         <span id="commissionValue">0</span><br>
+        <span>Donation: $</span>
+        <span id="donationValue">0</span><br>
         <span>====================</span><br>
         <span>Total: $</span>
         <span id="totalValue">0</span><br>
     </div>
 
-    <!-- Linking the external JavaScript file -->
+
     <script>
         const slider = document.getElementById("slider");
         const sliderValu = document.getElementById("sliderValue");
@@ -55,25 +68,35 @@
         const commissionValu = document.getElementById("commissionValue");
         const buySellPriceValu = document.getElementById("buySellPrice");
         const totalValu = document.getElementById("totalValue");
+        const donationValu = document.getElementById("donationValue");
+        const userDonation = document.getElementById("donationCheckBox");
         
       
         function updateResults() {
-          let grossCommissionIncome = buySellPriceValu.value * (slider.value / 100);
-          let brokerageSplit = grossCommissionIncome * 0.07;
-          let primaryFee = grossCommissionIncome - brokerageSplit;
-          let secondaryFee = (grossCommissionIncome - brokerageSplit) * 0.05;
-          let netIncome = grossCommissionIncome - brokerageSplit - secondaryFee;
-          let estimatedRebate = netIncome * 0.4;
-          let adjustedCommission = netIncome - estimatedRebate;
-          let total = primaryFee + secondaryFee + estimatedRebate + commissionValue;
-      
-      
-          totalValu.innerHTML = grossCommissionIncome.toFixed(2);
-          yourRebateValu.innerHTML = estimatedRebate.toFixed(2);
-          primaryFeeValu.innerHTML = brokerageSplit.toFixed(2);
-          secondaryFeeValu.innerHTML = secondaryFee.toFixed(2);
-          commissionValu.innerHTML = adjustedCommission.toFixed(2);
-          totalValu.innerHTML = total.toFixed(2);
+            let grossCommissionIncome = buySellPriceValu.value * (slider.value / 100);
+            let brokerageSplit = grossCommissionIncome * 0.07;
+            let primaryFee = grossCommissionIncome - brokerageSplit;
+            let secondaryFee = (grossCommissionIncome - brokerageSplit) * 0.05;
+            let netIncome = grossCommissionIncome - brokerageSplit - secondaryFee;
+            let estimatedRebate = netIncome * 0.4;
+            let adjustedCommission = netIncome - estimatedRebate;
+            let donationValue = 0;
+
+            if(document.getElementById("donationCheckBox").checked = true) {
+                estimatedRebate = netIncome * 0.25;
+                donationValue = netIncome * 0.15;
+            } else {
+                donationValue = 0;
+            }
+            
+            let total = primaryFee + secondaryFee + estimatedRebate + commissionValue + donationValue;
+            totalValu.innerHTML = grossCommissionIncome.toFixed(2);
+            yourRebateValu.innerHTML = estimatedRebate.toFixed(2);
+            primaryFeeValu.innerHTML = brokerageSplit.toFixed(2);
+            secondaryFeeValu.innerHTML = secondaryFee.toFixed(2);
+            commissionValu.innerHTML = adjustedCommission.toFixed(2);
+            donationValu.innerHTML = donationValue.toFixed(2);
+            totalValu.innerHTML = total.toFixed(2);
         };
       
         slider.addEventListener("input", function() {
@@ -81,6 +104,7 @@
           updateResults();
         });
         buySellPrice.addEventListener("input", e => { updateResults() });
+        donationCheckBox.addEventListener("input", e => { updateResults() });
     </script>
 </body>
 
