@@ -77,18 +77,18 @@
                     <div>
                         <!--<h2><label></label></h2>-->
                         <span>Your Rebate: $</span>
-                        <span id="yourRebateValue">0</span><br>
+                        <span id="yourRebateValue">0.00</span><br>
                         <span>Primary Fees: $</span>
-                        <span id="primaryFeeValue">0</span><br>
+                        <span id="primaryFeeValue">0.00</span><br>
                         <span>Secondary Fees: $</span>
-                        <span id="secondaryFeeValue">0</span><br>
+                        <span id="secondaryFeeValue">0.00</span><br>
                         <span>Commission: $</span>
-                        <span id="commissionValue">0</span><br>
+                        <span id="commissionValue">0.00</span><br>
                         <span>Donation: $</span>
-                        <span id="donationValue">0</span><br>
+                        <span id="donationValue">0.00</span><br>
                         <span>====================</span><br>
                         <span>Total: $</span>
-                        <span id="totalValue">0</span><br>
+                        <span id="totalValue">0.00</span><br>
                     </div>
                 </fieldset>
             </form>
@@ -117,6 +117,7 @@
             let estimatedRebate = netIncome * 0.4;
             let adjustedCommission = netIncome - estimatedRebate;
             let donationValue = 0;
+            let total = 0;
 
             if(document.getElementById("donationCheckBox").checked == true) {
                 estimatedRebate = netIncome * 0.25;
@@ -125,7 +126,8 @@
                 donationValue = 0;
             }
             
-            let total = primaryFee + secondaryFee + estimatedRebate + commissionValue + donationValue;
+            total = primaryFee + secondaryFee + estimatedRebate + commissionValue + donationValue;
+            
             totalValu.innerHTML = grossCommissionIncome.toFixed(2);
             yourRebateValu.innerHTML = estimatedRebate.toFixed(2);
             primaryFeeValu.innerHTML = brokerageSplit.toFixed(2);
