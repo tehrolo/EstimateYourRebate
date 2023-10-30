@@ -1,3 +1,5 @@
+$(document).ready(function(){
+    alert("hi");}
 //vars from user input
 var buyerOrSeller;  //radio buttons
 var purchasePrice;  //text box
