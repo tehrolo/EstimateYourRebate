@@ -5,7 +5,7 @@ const primaryFeeValue = document.getElementById("primaryFeeValue");
 const secondaryFeeValue = document.getElementById("secondaryFeeValue");
 const commissionValue = document.getElementById("commissionValue");
 const purchasePrice = document.getElementById("buySellPrice");
-const purchasePrice = document.getElementById("total");
+const total = document.getElementById("total");
 var grossCommissionIncome;
 var brokerageSplit;
 var primaryFee;
