@@ -1,7 +1,7 @@
 //vars from user input
 var buyerOrSeller;  //radio buttons
 var purchasePrice;  //text box
-var commissionRateSlider = document.getElementById("commisionRange");  //slider
+var commissionRateSlider = document.getElementById("commisionRangeSlider");  //slider
 var userDonate;  //checkbox
 var userDefCommRate = document.getElementById("adjCommRate");
 
