@@ -12,8 +12,8 @@ container {
     margin-left: 10px;
 }
 legend {
-  background-color: #000;
-  color: #fff;
+  #background-color: #000;
+  #color: #fff;
   padding: 3px 6px;
 }
 
