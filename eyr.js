@@ -3,6 +3,8 @@ var buyerOrSeller;  //radio buttons
 var purchasePrice;  //text box
 var commissionRateSlider = document.getElementById("commisionRange");  //slider
 var userDonate;  //checkbox
+var userDefCommRate = document.getElementById("adjCommRate");
+
 
 //vars for Rebate calculation
 var GrossCommissionIncome = purchasePrice * commissionRate
@@ -18,7 +20,7 @@ if(userDonate == True) {
 }
 
 //update slider
-output.innerHTML = commissionRateSlider.value; // Display the default slider value
+userDefCommRate.innerHTML = commissionRateSlider.value; // Display the default slider value
 commissionRateSlider.oninput = function() {
-  output.innerHTML = this.value;
+  adjCommRate.innerHTML = this.value;
 }
