@@ -37,8 +37,21 @@
         <div id="commission-rate">
             <br><br>
             <h2>Select a commission rate. </h2>
-            <input type="range" min="3.0" max="10.0" value="6.0" class="slider" id="commisionRange">
+            <span>Current commision rate:</span>
+            <span id="adjCommRate">6.0</span>
+            <input type="range" step="0.5" min="3.0" max="10.0" value="6.0" class="slider" id="commisionRange">
+            <span tabindex="0" class="slider-minval">3</span>
+            <span tabindex="0" class="slider-maxval">10</span>
         </div>
+        <slider>
+            <div class="slider">
+                <div id="slider" class="slider-with-input">
+                    <div>
+
+                    <input type="text" class="slider-input" placeholder="6">
+                </div>
+            </div>
+        </slider>
     </div>
 </body>
 </html>
