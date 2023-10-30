@@ -37,7 +37,7 @@ function updateResults() {
     donationValu.innerHTML = donationValue.toFixed(2);
     totalValu.innerHTML = total.toFixed(2);
     yValues = [estimatedRebate.toFixed(0),brokerageSplit.toFixed(0),secondaryFee.toFixed(0),adjustedCommission.toFixed(0),donationValue.toFixed(0)];
-    myChart.data.datasets[0].data = yValues;
+    myChart.data.datasets[1].data = yValues;
     updateChart()
 };
 
