@@ -1,61 +1,33 @@
 <!DOCTYPE html>
-<html lang='en'>
-<script src="script.js" type="text/javascript"></script>
+<html lang="en">
+
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>PROTO - Estimate Your Rebate - PROTO</title>
-    <link rel="stylesheet" href=style.css/>
-    <link rel="icon" type="image/png" href="assets/favicon.png"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buyer/Seller Form</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
 </head>
+
 <body>
-    <div id="eyr">
-        <h1>EstimateYourRebate</h1>
+    <div class="container">
+        <label>Select Role:</label><br>
+        <input type="radio" id="buyer" name="role" value="buyer"> Buyer
+        <input type="radio" id="seller" name="role" value="seller"> Seller
 
-        <div id="buy-sell">   
-            <br><br>
-            <h2>Are you a buyer or seller?</h2>
-            <div>
-                <label for="radBuyer">BUYER</label><br>
-                <input tabindex="0" type="radio" id="radBuyer" name="radBuySell" />
-            </div>
-            <div>
-                <label for="radSeller">SELLER</label><br>
-                <input tabindex="0" type="radio" id="radSeller" name="radBuySell" />
-            </div>
+        <div class="input-container">
+            <label for="dollarValue">Enter Dollar Value:</label>
+            <input type="text" id="dollarValue">
         </div>
 
-        <div id="sell-price">
-            <br><br>
-            <h2>What is the buy/sell price?</h2>
-            <label tabindex="0" class="input-label prefix">
-                <span>$</span>
-            </label>
-            <input tabindex="0" type="number" placeholder="$100,000" id="buySellPrice"><br>
+        <div class="slider-container">
+            <label for="slider">Select Value (3 to 10 with 0.5 steps):</label>
+            <input type="range" id="slider" min="3" max="10" step="0.5" value="3">
+            <span id="sliderValue">3</span>
         </div>
-        <slider>
-            <div id="commission-rate">
-                <br><br>
-                <h2>Select a commission rate. </h2>
-                <span>Current rate:</span>
-                <span id="adjCommRate">6.0</span><br>
-                <input type="range" step="0.5" min="3.0" max="10.0" value="6.0" class="slider" id="commisionRangeSlider"><br>
-                <span tabindex="0" class="slider-minval">3</span>
-                <span tabindex="0" class="slider-maxval">10</span>
-                <!--
-                <script>
-                    var commissionRateSlider = document.getElementById("commisionRangeSlider");  //slider
-                    var userDefCommRate = document.getElementById("adjCommRate");
-
-                    //update slider
-                    userDefinedCommRate.innerHTML = commissionRateSlider.value; // Display the default slider value
-                    commissionRateSlider.oninput = function() {
-                      userDefinedCommRate.innerHTML = this.value;
-                    }
-                </script>
-                -->
-            </div>
-        </slider>
     </div>
+
+    <!-- Linking the external JavaScript file -->
+    <script src="script.js"></script>
 </body>
+
 </html>
