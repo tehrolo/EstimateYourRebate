@@ -49,7 +49,7 @@
         <span id="primaryFeeValue">0</span><br>
         <span>Secondary Fees: $</span>
         <span id="secondaryFeeValue">0</span><br>
-        <span>My Commission: $</span>
+        <span>Commission: $</span>
         <span id="commissionValue">0</span><br>
         <span>Donation: $</span>
         <span id="donationValue">0</span><br>
@@ -82,7 +82,7 @@
             let adjustedCommission = netIncome - estimatedRebate;
             let donationValue = 0;
 
-            if(document.getElementById("donationCheckBox").checked = true) {
+            if(document.getElementById("donationCheckBox").checked == true) {
                 estimatedRebate = netIncome * 0.25;
                 donationValue = netIncome * 0.15;
             } else {
