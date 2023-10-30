@@ -18,7 +18,6 @@ function updateResults() {
     let adjustedCommission = netIncome - estimatedRebate;
     let total = primaryFee + secondaryFee + estimatedRebate + commissionValue;
     
-    
     totalValu.innerHTML = grossCommissionIncome.toFixed(2);
     yourRebateValu.innerHTML = estimatedRebate.toFixed(2);
     primaryFeeValu.innerHTML = brokerageSplit.toFixed(2);
