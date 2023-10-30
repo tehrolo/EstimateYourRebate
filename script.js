@@ -5,6 +5,7 @@ const primaryFeeValue = document.getElementById("primaryFeeValue");
 const secondaryFeeValue = document.getElementById("secondaryFeeValue");
 const commissionValue = document.getElementById("commissionValue");
 const purchasePrice = document.getElementById("buySellPrice");
+const purchasePrice = document.getElementById("total");
 var grossCommissionIncome;
 var brokerageSplit;
 var netIncome;
@@ -14,7 +15,6 @@ var total;
 
 function updateResults() {
     calculate()
-    grossCommissionIncome.textContent = ;
     brokerageSplit.textContent = ;
     netIncome.textContent = ;
     estimatedRebate.textContent = ;
