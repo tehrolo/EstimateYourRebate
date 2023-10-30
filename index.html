@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimate Your Rebate</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
+</head>
+
+<body>
+    <div class="container">
+        <h1>Estimate Your Rebate</h1>
+        <h2><label>Are you a buyer or seller?</label></h2>
+        <input type="radio" id="buyer" name="role" value="buyer"> Buyer
+        <input type="radio" id="seller" name="role" value="seller"> Seller
+
+        <div class="input-container">
+            <br><br>
+            <h2><label for="dollarValue">What is the buy/sell price?:</label></h2>
+            <span>$</span>
+            <input tabindex="0" type="number" placeholder="100,000" id="buySellPrice">
+        </div>
+
+        <div class="slider-container">
+            <br><br>
+            <h2><label for="slider">Select a commission rate:</label></h2>
+            <span id="sliderValue">6</span>
+            <span> %</span><br>
+            <input type="range" id="slider" min="3" max="10" step="0.5" value="6">
+        </div>
+    </div>
+    <div class="results">
+        <h2><label>Results</label></h2>
+        <span>Your Rebate: $</span>
+        <span id="yourRebateValue">0</span><br>
+        <span>Primary Fees: $</span>
+        <span id="primaryFeeValue">0</span><br>
+        <span>Secondary Fees: $</span>
+        <span id="secondaryFeeValue">0</span><br>
+        <span>My Commission: $</span>
+        <span id="commissionValue">0</span><br>
+        <span>====================</span><br>
+        <span>Total: $</span>
+        <span id="totalValue">0</span><br>
+    </div>
+
+    <!-- Linking the external JavaScript file -->
+    <script>
+        const slider = document.getElementById("slider");
+        const sliderValu = document.getElementById("sliderValue");
+        const yourRebateValu = document.getElementById("yourRebateValue");
+        const primaryFeeValu = document.getElementById("primaryFeeValue");
+        const secondaryFeeValu = document.getElementById("secondaryFeeValue");
+        const commissionValu = document.getElementById("commissionValue");
+        const buySellPriceValu = document.getElementById("buySellPrice");
+        const totalValu = document.getElementById("totalValue");
+        
+      
+        function updateResults() {
+          let grossCommissionIncome = buySellPriceValu.value * (slider.value / 100);
+          let brokerageSplit = grossCommissionIncome * 0.07;
+          let primaryFee = grossCommissionIncome - brokerageSplit;
+          let secondaryFee = (grossCommissionIncome - brokerageSplit) * 0.05;
+          let netIncome = grossCommissionIncome - brokerageSplit - secondaryFee;
+          let estimatedRebate = netIncome * 0.4;
+          let adjustedCommission = netIncome - estimatedRebate;
+          let total = primaryFee + secondaryFee + estimatedRebate + commissionValue;
+      
+      
+          totalValu.innerHTML = grossCommissionIncome.toFixed(2);
+          yourRebateValu.innerHTML = estimatedRebate.toFixed(2);
+          primaryFeeValu.innerHTML = brokerageSplit.toFixed(2);
+          secondaryFeeValu.innerHTML = secondaryFee.toFixed(2);
+          commissionValu.innerHTML = adjustedCommission.toFixed(2);
+          totalValu.innerHTML = total.toFixed(2);
+        };
+      
+        slider.addEventListener("input", function() {
+          sliderValu.innerHTML = slider.value;
+          updateResults();
+        });
+        buySellPrice.addEventListener("input", e => { updateResults() });
+    </script>
+</body>
+
+</html>
