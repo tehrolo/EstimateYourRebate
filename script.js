@@ -87,4 +87,4 @@ function updateChart(x) {
   // Update chart data and redraw
   myChart.data.datasets[0].data = x;
   myChart.update();
-}
+};
