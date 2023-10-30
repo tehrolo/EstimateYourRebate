@@ -36,6 +36,8 @@ function updateResults() {
     commissionValu.innerHTML = adjustedCommission.toFixed(2);
     donationValu.innerHTML = donationValue.toFixed(2);
     totalValu.innerHTML = total.toFixed(2);
+    yValues = [estimatedRebate.toFixed(2),brokerageSplit.toFixed(2),secondaryFee.toFixed(2),adjustedCommission.toFixed(2),donationValue.toFixed(2)];
+    chart.update()
 };
 
 slider.addEventListener("input", function() {
@@ -44,3 +46,31 @@ slider.addEventListener("input", function() {
 });
 buySellPrice.addEventListener("input", e => { updateResults() });
 donationCheckBox.addEventListener("input", e => { updateResults() });
+
+//Chart
+var chartLabels = ["Your Rebate", "Primary Fee", "Secondary Fee", "Commission", "Donation"];
+var yValues = [0,0,0,0,0];
+var barColors = [
+  "#b91d47",
+  "#00aba9",
+  "#2b5797",
+  "#e8c3b9",
+  "#1e7145"
+];
+
+new chart("chart", {
+  type: "doughnut",
+  data: {
+    labels: chartLabels,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: ""
+    }
+  }
+});
