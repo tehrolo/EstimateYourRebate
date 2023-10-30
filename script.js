@@ -37,7 +37,7 @@ function updateResults() {
     donationValu.innerHTML = donationValue.toFixed(2);
     totalValu.innerHTML = total.toFixed(2);
     yValues = [estimatedRebate.toFixed(2),brokerageSplit.toFixed(2),secondaryFee.toFixed(2),adjustedCommission.toFixed(2),donationValue.toFixed(2)];
-    updateChart(yValues)
+    updateChart()
 };
 
 slider.addEventListener("input", function() {
@@ -48,9 +48,8 @@ buySellPrice.addEventListener("input", e => { updateResults() });
 donationCheckBox.addEventListener("input", e => { updateResults() });
 
 //Chart
-const labels = ["Variable 1", "Variable 2", "Variable 3", "Variable 4", "Variable 5"];
 const initialData = [20,20,20,20,20];
-const chartLabels = ["Your Rebate", "Primary Fee", "Secondary Fee", "Commission", "Donation"];
+const labels  = ["Your Rebate", "Primary Fee", "Secondary Fee", "Commission", "Donation"];
 var yValues;
 
 var barColors = [
@@ -67,7 +66,7 @@ const myChart = new Chart(ctx, {
   data: {
     labels: labels,
     datasets: [{
-      label: 'Variable Values',
+      label: 'Where it all goes:',
       data: initialData,
       backgroundColor: barColors,
       borderColor: 'rgba(75, 192, 192, 1)',
@@ -84,11 +83,11 @@ const myChart = new Chart(ctx, {
 });
 
 // Function to update chart data
-function updateChart(x) {
+function updateChart() {
   // Generate random data for demonstration
   const updatedData = x;
   
   // Update chart data and redraw
-  myChart.data.datasets[0].data = updatedData;
+  myChart.data.datasets[0].data = yValues;
   myChart.update();
 }
