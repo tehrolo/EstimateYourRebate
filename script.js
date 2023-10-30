@@ -15,11 +15,11 @@ var total;
 
 function updateResults() {
     calculate()
-    brokerageSplit.textContent = ;
-    netIncome.textContent = ;
-    estimatedRebate.textContent = ;
-    commissionValue.textContent = ;
-    total.textContent = ;
+    primaryFeeValue.textContent = brokerageSplit;
+    secondaryFeeValue.textContent = netIncome;
+    yourRebateValue.textContent = estimatedRebate;
+    commissionValue.textContent = commissionValue;
+    total.textContent = total;
 }
 function calculate() {
     grossCommissionIncome = (purchasePrice.value * (sliderValue.value / 100));
