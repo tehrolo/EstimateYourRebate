@@ -10,17 +10,21 @@
 
 <body>
     <div class="container">
-        <label>Are you a buyer or seller?</label><br>
+        <h1>Estimate Your Rebate</h1>
+        <br><br>
+        <h2><label>Are you a buyer or seller?</label></h2>
         <input type="radio" id="buyer" name="role" value="buyer"> Buyer
         <input type="radio" id="seller" name="role" value="seller"> Seller
 
         <div class="input-container">
-            <label for="dollarValue">What is the buy/sell price?:</label>
+            <br><br>
+            <h2><label for="dollarValue">What is the buy/sell price?:</label></h2>
             <input type="text" id="dollarValue">
         </div>
 
         <div class="slider-container">
-            <label for="slider">Select a commission rate:</label>
+            <br><br>
+            <h2><label for="slider">Select a commission rate:</label></h2>
             <input type="range" id="slider" min="3" max="10" step="0.5" value="3">
             <span id="sliderValue">6</span>
         </div>
