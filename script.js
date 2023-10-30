@@ -1,42 +1,34 @@
 const slider = document.getElementById("slider");
-const sliderValue = document.getElementById("sliderValue");
-const yourRebateValue = document.getElementById("yourRebateValue");
-const primaryFeeValue = document.getElementById("primaryFeeValue");
-const secondaryFeeValue = document.getElementById("secondaryFeeValue");
-const commissionValue = document.getElementById("commissionValue");
-const purchasePrice = document.getElementById("buySellPrice");
-const total = document.getElementById("total");
+const sliderValu = document.getElementById("sliderValue");
+const yourRebateValu = document.getElementById("yourRebateValue");
+const primaryFeeValu = document.getElementById("primaryFeeValue");
+const secondaryFeeValu = document.getElementById("secondaryFeeValue");
+const commissionValu = document.getElementById("commissionValue");
+const buySellPriceValu = document.getElementById("buySellPrice");
+const totalValu = document.getElementById("totalValue");
+
 
 function updateResults() {
-    var grossCommissionIncome;
-    var brokerageSplit;
-    var primaryFee;
-    var secondaryFee
-    var netIncome;
-    var estimatedRebate;
-    var adjustedCommission;
-    var total;
+    let grossCommissionIncome = buySellPriceValu.value * (slider.value / 100);
+    let brokerageSplit = grossCommissionIncome * 0.07;
+    let primaryFee = grossCommissionIncome - brokerageSplit;
+    let secondaryFee = (grossCommissionIncome - brokerageSplit) * 0.05;
+    let netIncome = grossCommissionIncome - brokerageSplit - secondaryFee;
+    let estimatedRebate = netIncome * 0.4;
+    let adjustedCommission = netIncome - estimatedRebate;
+    let total = primaryFee + secondaryFee + estimatedRebate + commissionValue;
     
-    grossCommissionIncome = purchasePrice.value * (sliderValue.value / 100);
-    brokerageSplit = grossCommissionIncome * 0.93;
-    netIncome = brokerageSplit * 0.95;
-    primaryFee = grossCommissionIncome - brokerageSplit;
-    secondaryFee = brokerageSplit - netIncome;
-    estimatedRebate = netIncome * 0.4;
-    commissionValue = netIncome - estimatedRebate;
-    total = primaryFee + secondaryFee + estimatedRebate + commissionValue
     
-    primaryFeeValue.textContent = primaryFee;
-    secondaryFeeValue.textContent = secondaryFee;
-    yourRebateValue.textContent = estimatedRebate;
-    commissionValue.textContent = adjustedCommission;
-    total.textContent = total;
-}
+    totalValu.innerHTML = grossCommissionIncome.toFixed(2);
+    yourRebateValu.innerHTML = estimatedRebate.toFixed(2);
+    primaryFeeValu.innerHTML = brokerageSplit.toFixed(2);
+    secondaryFeeValu.innerHTML = secondaryFee.toFixed(2);
+    commissionValu.innerHTML = adjustedCommission.toFixed(2);
+    totalValu.innerHTML = total.toFixed(2);
+};
 
-slider.addEventListener("input", function () {
-    sliderValue.textContent = slider.value;
+slider.addEventListener("input", function() {
+    sliderValu.innerHTML = slider.value;
     updateResults();
 });
-purchasePrice.addEventListener("input", function () {
-    updateResults();
-});
+buySellPrice.addEventListener("input", e => { updateResults() });
