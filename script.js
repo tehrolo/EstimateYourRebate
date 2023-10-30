@@ -17,19 +17,19 @@ function updateResults() {
     var adjustedCommission;
     var total;
     
-    grossCommissionIncome = (purchasePrice.value * (sliderValue.value / 100));
-    brokerageSplit = (grossCommissionIncome * 0.93);
-    netIncome = (brokerageSplit * 0.95);
-    primaryFee = (grossCommissionIncome - brokerageSplit);
-    secondaryFee = (brokerageSplit - netIncome);
-    estimatedRebate = (netIncome * 0.4);
-    commissionValue = (netIncome - estimatedRebate);
-    total = (primaryFee + secondaryFee + estimatedRebate + commissionValue)
+    grossCommissionIncome = purchasePrice.value * (sliderValue.value / 100);
+    brokerageSplit = grossCommissionIncome * 0.93;
+    netIncome = brokerageSplit * 0.95;
+    primaryFee = grossCommissionIncome - brokerageSplit;
+    secondaryFee = brokerageSplit - netIncome;
+    estimatedRebate = netIncome * 0.4;
+    commissionValue = netIncome - estimatedRebate;
+    total = primaryFee + secondaryFee + estimatedRebate + commissionValue
     
     primaryFeeValue.textContent = primaryFee;
     secondaryFeeValue.textContent = secondaryFee;
     yourRebateValue.textContent = estimatedRebate;
-    commissionValue.textContent = commissionValue;
+    commissionValue.textContent = adjustedCommission;
     total.textContent = total;
 }
 
