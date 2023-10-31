@@ -65,23 +65,12 @@ var myChart = new Chart(ctx, {
       backgroundColor: barColors,
     }]
   },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
-  }
 });
 
 // Function to update chart data
 function updateChart(data) {
     // Update chart data and redraw
-    myChart.data.datasets.pop();
-    myChart.data.datasets.push({
-        label: '',
-        data: data,
-        backgroundColor: barColors,
-    });
-    myChart.update();
+      let dat = [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()];
+      myChart.data.datasets[0] = dat;
+      myChart.update();
 };
