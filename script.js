@@ -8,6 +8,7 @@ const buySellPriceValu = document.getElementById("buySellPrice");
 const totalValu = document.getElementById("totalValue");
 const donationValu = document.getElementById("donationValue");
 const userDonation = document.getElementById("donationCheckBox");
+const yValues;
       
 function updateResults() {
     let grossCommissionIncome = buySellPriceValu.value * (slider.value / 100);
@@ -36,9 +37,10 @@ function updateResults() {
     commissionValu.innerHTML = adjustedCommission.toFixed(2);
     donationValu.innerHTML = donationValue.toFixed(2);
     totalValu.innerHTML = total.toFixed(2);
+    
     yValues = [estimatedRebate.toFixed(0),brokerageSplit.toFixed(0),secondaryFee.toFixed(0),adjustedCommission.toFixed(0),donationValue.toFixed(0)];
-    myChart.data.datasets[1].data = yValues;
-    updateChart()
+    myChart.data.datasets[0].data = yValues;
+    myChart.update();
 };
 
 slider.addEventListener("input", function() {
@@ -51,7 +53,7 @@ donationCheckBox.addEventListener("input", e => { updateResults() });
 //Chart
 const initialData = [20,20,20,20,20];
 const labels  = ["Your Rebate", "Primary Fee", "Secondary Fee", "Commission", "Donation"];
-var yValues;
+
 
 var barColors = [
   "#b91d47",
