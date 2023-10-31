@@ -65,8 +65,6 @@ var myChart = new Chart(ctx, {
       label: 'Where it all goes:',
       data: initialData,
       backgroundColor: barColors,
-      borderColor: 'rgba(75, 192, 192, 1)',
-      borderWidth: 1
     }]
   },
   options: {
@@ -79,8 +77,13 @@ var myChart = new Chart(ctx, {
 });
 
 // Function to update chart data
-function updateChart(res) {
-  // Update chart data and redraw
-    myChart.data.datasets[0].data = res;
+function updateChart(data) {
+    // Update chart data and redraw
+    myChart.data.datasets.pop();
+    myChart.data.datasets.push({
+        label: 'Where it all goes:',
+        data: data,
+        backgroundColor: barColors,
+    });
     myChart.update();
 };
