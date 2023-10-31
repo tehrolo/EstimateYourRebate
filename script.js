@@ -57,7 +57,7 @@ const labels  = ["Your Rebate", "Primary Fee", "Secondary Fee", "Commission", "D
 
 var barColors = ["#b91d47","#00aba9","#2b5797","#e8c3b9","#1e7145"];
 const ctx = document.getElementById('myChart').getContext('2d');
-const myChart = new Chart(ctx, {
+var myChart = new Chart(ctx, {
   type: 'doughnut',
   data: {
     labels: labels,
