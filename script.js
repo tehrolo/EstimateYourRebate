@@ -38,10 +38,9 @@ function updateResults() {
     commissionValu.innerHTML = adjustedCommission.toFixed(2);
     donationValu.innerHTML = donationValue.toFixed(2);
     totalValu.innerHTML = total.toFixed(2);
-    
-    yValues = [estimatedRebate.toFixed(0),brokerageSplit.toFixed(0),secondaryFee.toFixed(0),adjustedCommission.toFixed(0),donationValue.toFixed(0)];
-    yValues = [15,20,20,40,5];
-    updateChart(yValues);
+
+    data = [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()];
+    updateChart(data);
 };
 
 slider.addEventListener("input", function() {
@@ -62,7 +61,7 @@ var myChart = new Chart(ctx, {
   data: {
     labels: labels,
     datasets: [{
-      label: 'Where it all goes:',
+      label: '',
       data: initialData,
       backgroundColor: barColors,
     }]
@@ -81,7 +80,7 @@ function updateChart(data) {
     // Update chart data and redraw
     myChart.data.datasets.pop();
     myChart.data.datasets.push({
-        label: 'Where it all goes:',
+        label: '',
         data: data,
         backgroundColor: barColors,
     });
