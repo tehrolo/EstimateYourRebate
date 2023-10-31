@@ -71,6 +71,6 @@ var myChart = new Chart(ctx, {
 function updateChart(data) {
     // Update chart data and redraw
       let dat = [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()];
-      myChart.data.datasets[0] = dat;
+      myChart.data.datasets[0].data = dat;
       myChart.update();
 };
