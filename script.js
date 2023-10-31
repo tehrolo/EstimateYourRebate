@@ -20,6 +20,7 @@ function updateResults() {
     let adjustedCommission = netIncome - estimatedRebate;
     let donationValue = 0;
     let total = 0;
+    let yValues = 0;
 
     if(document.getElementById("donationCheckBox").checked == true) {
         estimatedRebate = netIncome * 0.25;
@@ -50,18 +51,11 @@ slider.addEventListener("input", function() {
 buySellPrice.addEventListener("input", e => { updateResults() });
 donationCheckBox.addEventListener("input", e => { updateResults() });
 
-//Chart
+// Initialize Chart.js
 const initialData = [20,20,20,20,20];
 const labels  = ["Your Rebate", "Primary Fee", "Secondary Fee", "Commission", "Donation"];
-let yValues = 0;
-var barColors = [
-  "#b91d47",
-  "#00aba9",
-  "#2b5797",
-  "#e8c3b9",
-  "#1e7145"
-];
-// Initialize Chart.js
+
+var barColors = ["#b91d47","#00aba9","#2b5797","#e8c3b9","#1e7145"];
 const ctx = document.getElementById('myChart').getContext('2d');
 const myChart = new Chart(ctx, {
   type: 'doughnut',
