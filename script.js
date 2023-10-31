@@ -39,6 +39,7 @@ function updateResults() {
     totalValu.innerHTML = total.toFixed(2);
     
     yValues = [estimatedRebate.toFixed(0),brokerageSplit.toFixed(0),secondaryFee.toFixed(0),adjustedCommission.toFixed(0),donationValue.toFixed(0)];
+    yValues = [15,20,20,40,5];
     myChart.data.datasets[0].data = yValues;
     myChart.update();
 };
@@ -53,7 +54,6 @@ donationCheckBox.addEventListener("input", e => { updateResults() });
 //Chart
 const initialData = [20,20,20,20,20];
 const labels  = ["Your Rebate", "Primary Fee", "Secondary Fee", "Commission", "Donation"];
-
 
 var barColors = [
   "#b91d47",
