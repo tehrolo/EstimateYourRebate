@@ -20,7 +20,6 @@ function updateResults() {
     let adjustedCommission = netIncome - estimatedRebate;
     let donationValue = 0;
     let total = 0;
-    let yValues = 0;
 
     if(document.getElementById("donationCheckBox").checked == true) {
         estimatedRebate = netIncome * 0.25;
@@ -39,7 +38,7 @@ function updateResults() {
     donationValu.innerHTML = donationValue.toFixed(2);
     totalValu.innerHTML = total.toFixed(2);
 
-    data = [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()];
+    let data = [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()];
     updateChart(data);
 };
 
