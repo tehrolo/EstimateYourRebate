@@ -28,14 +28,14 @@ function updateResults() {
         donationValue = 0;
     }
     
-    total = primaryFee + secondaryFee + estimatedRebate + commissionValue + donationValue;
+    //total = (primaryFee + secondaryFee + estimatedRebate + commissionValue + donationValue);
     
     yourRebateValu.innerHTML = estimatedRebate;
     primaryFeeValu.innerHTML = brokerageSplit;
     secondaryFeeValu.innerHTML = secondaryFee;
     commissionValu.innerHTML = adjustedCommission;
     donationValu.innerHTML = donationValue;
-    totalValu.innerHTML = total;
+    totalValu.innerHTML = (primaryFee + secondaryFee + estimatedRebate + commissionValue + donationValue);
 
     let data = [estimatedRebate, brokerageSplit, secondaryFee, adjustedCommission, donationValue];
     updateChart(data);
@@ -69,7 +69,6 @@ var myChart = new Chart(ctx, {
 // Function to update chart data
 function updateChart(data) {
     // Update chart data and redraw
-      let dat = [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()];
-      myChart.data.datasets[0].data = dat;
+      myChart.data.datasets[0].data = data;
       myChart.update();
 };
