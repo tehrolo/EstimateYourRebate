@@ -35,7 +35,6 @@ function updateResults() {
     secondaryFeeValu.innerHTML = secondaryFee;
     commissionValu.innerHTML = adjustedCommission;
     donationValu.innerHTML = donationValue;
-    totalValu.innerHTML = (primaryFee + secondaryFee + estimatedRebate + commissionValue + donationValue);
 
     let data = [estimatedRebate, brokerageSplit, secondaryFee, adjustedCommission, donationValue];
     updateChart(data);
