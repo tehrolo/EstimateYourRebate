@@ -11,13 +11,13 @@ const userDonation = document.getElementById("donationCheckBox");
 
       
 function updateResults() {
-    let grossCommissionIncome = buySellPriceValu.value * (slider.value / 100);
-    let brokerageSplit = grossCommissionIncome * 0.07;
-    let primaryFee = grossCommissionIncome - brokerageSplit;
-    let secondaryFee = (grossCommissionIncome - brokerageSplit) * 0.05;
-    let netIncome = grossCommissionIncome - brokerageSplit - secondaryFee;
-    let estimatedRebate = netIncome * 0.4;
-    let adjustedCommission = netIncome - estimatedRebate;
+    let grossCommissionIncome = (buySellPriceValu.value * (slider.value / 100)).toFixed();
+    let brokerageSplit = (grossCommissionIncome * 0.07).toFixed();
+    let primaryFee = (grossCommissionIncome - brokerageSplit).toFixed();
+    let secondaryFee = ((grossCommissionIncome - brokerageSplit) * 0.05).toFixed();
+    let netIncome = (grossCommissionIncome - brokerageSplit - secondaryFee).toFixed();
+    let estimatedRebate = (netIncome * 0.4).toFixed();
+    let adjustedCommission = (netIncome - estimatedRebate).toFixed();
     let donationValue = 0;
     let total = 0;
 
@@ -30,15 +30,14 @@ function updateResults() {
     
     total = primaryFee + secondaryFee + estimatedRebate + commissionValue + donationValue;
     
-    totalValu.innerHTML = grossCommissionIncome.toFixed(2);
-    yourRebateValu.innerHTML = estimatedRebate.toFixed(2);
-    primaryFeeValu.innerHTML = brokerageSplit.toFixed(2);
-    secondaryFeeValu.innerHTML = secondaryFee.toFixed(2);
-    commissionValu.innerHTML = adjustedCommission.toFixed(2);
-    donationValu.innerHTML = donationValue.toFixed(2);
-    totalValu.innerHTML = total.toFixed(2);
+    yourRebateValu.innerHTML = estimatedRebate;
+    primaryFeeValu.innerHTML = brokerageSplit;
+    secondaryFeeValu.innerHTML = secondaryFee;
+    commissionValu.innerHTML = adjustedCommission;
+    donationValu.innerHTML = donationValue;
+    totalValu.innerHTML = total;
 
-    let data = [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()];
+    let data = [estimatedRebate, brokerageSplit, secondaryFee, adjustedCommission, donationValue];
     updateChart(data);
 };
 
