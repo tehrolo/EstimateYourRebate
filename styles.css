@@ -27,7 +27,7 @@ fieldset style {
     #background:#f6f8ff;
 }
 chart {
-    style="width:100%;"
+    width:100%;
 }
 body {
     display: flex;
