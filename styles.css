@@ -39,17 +39,17 @@ body {
 canvas {
     margin-bottom: 20px;
 }
-container {
+#container {
     width:50%; 
     margin:auto;
 }
-rebate-entry {
+#rebate-entry {
     loat:left;
     display:inline-block;
     width:45%;
     text-align:left;
 }
-rebate-results {
+#rebate-results {
     float:right;
     display:inline-block; 
     width:45%;
