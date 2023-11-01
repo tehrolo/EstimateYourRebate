@@ -7,19 +7,18 @@
         margin-top: 50px;
     }
     #container {
-        width:50%; 
+        width:80%; 
         margin:auto;
+        flex-direction: column;
     }
     #rebate-entry {
-        float:left;
         display:inline-block;
-        width:45%;
+        width:55%;
         text-align:left;
     }
     #rebate-results {
-        float:right;
         display:inline-block; 
-        width:45%;
+        width:55%;
         text-align:center;
     }
 }      
