@@ -127,6 +127,10 @@
 } 
 
 /*Everything else*/
+#container {
+    background-color: rgb(1, 33, 105);
+    color: white;
+}
 canvas {
     margin-bottom: 20px;
 }
@@ -143,4 +147,3 @@ legend {
 input {
   margin: 0.4rem;
 }
-
